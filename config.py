@@ -64,5 +64,6 @@ class Config:
             telegram_chat_id=os.environ["TELEGRAM_CHAT_ID"],
             db_path=os.getenv("DB_PATH", "prices.db"),
             destinations=destinations,
-            min_history_points=int(os.getenv("MIN_HISTORY_POINTS", "5")),
+            min_history_points=int(os.getenv("MIN_HISTORY_POINTS") or "5"),
+            anomaly_drop_pct=float(os.getenv("ANOMALY_DROP_PCT") or "0.30"),
         )

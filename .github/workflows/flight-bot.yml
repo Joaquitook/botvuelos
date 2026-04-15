@@ -29,6 +29,8 @@ jobs:
           TRAVELPAYOUTS_MARKER: ${{ secrets.TRAVELPAYOUTS_MARKER }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          ANOMALY_DROP_PCT: ${{ vars.ANOMALY_DROP_PCT }}
+          MIN_HISTORY_POINTS: ${{ vars.MIN_HISTORY_POINTS }}
         run: python main.py
 
       - name: Commitear historial de precios

@@ -49,6 +49,8 @@ class TravelpayoutsClient:
         limit: int = 30,
     ) -> list[dict]:
         """Consulta /prices_for_dates para un mes concreto (YYYY-MM)."""
+        # Por defecto la API incluye vuelos directos Y con escala.
+        # No mandamos el flag "direct" => se consideran ambos tipos.
         params = {
             "origin": origin,
             "destination": destination,
